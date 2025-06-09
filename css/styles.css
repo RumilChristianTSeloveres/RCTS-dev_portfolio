@@ -4448,6 +4448,11 @@ img.u-pull-left {
   margin-left: 0;
 }
 
+.s-footer__social i {
+  font-size: 24px;
+  transition: .4s ease;
+}
+
 .s-footer__social li {
   padding-left: 0;
   margin-right: 0.8rem;
