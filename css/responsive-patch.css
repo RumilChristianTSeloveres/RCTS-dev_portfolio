@@ -1,0 +1,405 @@
+/* ===================================================================
+ * # INTRO / HERO - Profile Image (.image)
+ * =================================================================== */
+
+/* Tablet: shrink image so it doesn't crowd the text */
+@media screen and (max-width: 1000px) {
+  .image {
+    width: 42%;
+    right: 20px;
+  }
+}
+
+/* Small tablet: push image further down, reduce size */
+@media screen and (max-width: 800px) {
+  .image {
+    width: 38%;
+    right: 10px;
+    bottom: 5%;
+  }
+}
+
+/* Mobile: hide the floating profile image so hero text is readable.
+   The about section already has a proper profile image. */
+@media screen and (max-width: 600px) {
+  .image {
+    display: none;
+  }
+
+  /* Give intro content more breathing room on mobile */
+  .s-intro__content {
+    padding-top: 7rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* ===================================================================
+ * # INTRO / HERO - Decorative title line
+ *
+ * .s-intro__content-title::before
+ * =================================================================== */
+@media screen and (max-width: 600px) {
+  .s-intro__content-title::before {
+    width: 80vw; /* shrink the orange line to fit the viewport */
+  }
+
+  /* Less right-padding on small screens so text has full width */
+  .s-intro__content-title {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .s-intro__content-title::before {
+    width: 70vw;
+  }
+}
+
+/* ===================================================================
+ * # SKILLS CAROUSEL
+ *
+ * skills-carousel.js
+ * =================================================================== */
+.skills-row {
+  flex-wrap: wrap; /* allow wrapping in case JS doesn't adjust quickly */
+}
+
+/* Tablet (600–800px): 4 columns still fine but tighter gap */
+@media screen and (max-width: 800px) {
+  .skills-row {
+    gap: 1rem;
+  }
+
+  .clients-list__item a {
+    padding: var(--vspace-0_5) var(--vspace-0_5);
+  }
+}
+
+/* Mobile (< 600px): 2 columns, tighter spacing */
+@media screen and (max-width: 600px) {
+  .skills-row {
+    gap: 0.6rem;
+    justify-content: center;
+  }
+
+  .clients-list__item {
+    width: calc(50% - 0.6rem); /* 2 columns */
+  }
+
+  .clients-list__item img {
+    max-height: 40px;
+    width: auto;
+  }
+
+  /* Label under icons */
+  .clients-list__item .desc {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===================================================================
+ * # FOOTER BOTTOM
+ *
+ * .s-footer__bottom-left and -right
+ * =================================================================== */
+@media screen and (max-width: 800px) {
+  .s-footer__bottom-left {
+    padding-right: 0;
+  }
+
+  .s-footer__bottom-right {
+    padding-left: 0;
+    margin-top: var(--vspace-0_5);
+  }
+}
+
+/* ===================================================================
+ * # ABOUT SECTION
+ * =================================================================== */
+@media screen and (max-width: 400px) {
+  .s-about img {
+    max-width: 100%;
+    box-shadow: 1px 1px 20px orange; /* smaller shadow on mobile */
+  }
+}
+
+/* ===================================================================
+ * # TYPOGRAPHY - Icons (social links in intro)
+ *
+ * Reduce icon margin on small screens to prevent overflow
+ * =================================================================== */
+@media screen and (max-width: 500px) {
+  .icons i {
+    font-size: 24px;
+    margin-left: 4%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .icons i {
+    font-size: 20px;
+    margin-left: 3%;
+  }
+}
+
+/* ===================================================================
+ * # HEADER - Ensure logo and toggle don't collide on tiny screens
+ * =================================================================== */
+@media screen and (max-width: 360px) {
+  .s-header__logo {
+    transform: translate(3rem, -50%);
+  }
+}
+
+/* ===================================================================
+ * # SECTION HEADER - "01", "02" background numbers
+ * =================================================================== */
+@media screen and (max-width: 700px) {
+  .section-header::before {
+    font-size: 5.5em;
+  }
+}
+
+/* ===================================================================
+ * # SKILLS CAROUSEL NAV - Arrow buttons
+ *
+ * Make touch targets larger on mobile
+ * =================================================================== */
+@media screen and (max-width: 2560px) {
+  .skills-carousel-arrow {
+    font-size: 2.5rem;
+    padding: 0 0.8rem;
+    min-width: 44px; /* minimum tap target */
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  /* Make all dots perfect circles */
+  .skills-carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    padding: 0;
+  }
+
+  /* Active dot — same size, just different color */
+  .skills-carousel-dot.active {
+    background: orangered;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+}
+
+/* Mobile: stack image above text in intro */
+@media screen and (max-width: 500px) {
+  /* Switch inner content to column layout */
+  .s-intro__content-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Un-absolute the image so it flows normally */
+  .image {
+    display: block; /* override the earlier display:none from responsive-patch */
+    position: relative; /* pull it out of absolute positioning */
+    width: 160px;
+    height: 160px;
+    right: auto;
+    bottom: auto;
+    margin: 0 auto 2rem auto;
+    filter: drop-shadow(1px 1px 12px orange);
+  }
+
+  .image img {
+    position: static; /* override position: inherit */
+    width: 100%;
+    height: 100%;
+    left: auto;
+    transform: none;
+  }
+
+  /* Re-center title text and remove the decorative line's left offset */
+  .s-intro__content-title {
+    padding-right: 0;
+    padding-top: 0;
+  }
+
+  .s-intro__content-title::before {
+    display: none; /* hide the decorative orange line on mobile */
+  }
+
+  /* Center the buttons and icons */
+  .s-intro__content-buttons {
+    justify-content: center;
+  }
+
+  .icons {
+    text-align: center;
+  }
+}
+
+/* ===================================================================
+ * Social icons (.icons)
+ * =================================================================== */
+.s-intro__content-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.icons {
+  margin-top: 1.5rem;
+  display: flex; /* keep icons in a row */
+  flex-wrap: wrap; /* allow wrap on tiny screens */
+  gap: 0.5rem;
+}
+
+/* Make sure icons are never hidden */
+.icons a {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ===================================================================
+ * Image gone between 501px–600px
+ * =================================================================== */
+
+/* REMOVE the old 600px hide rule and replace with this: */
+@media screen and (max-width: 500px) {
+  /* image is handled by the column layout fix below — keep it visible */
+  .image {
+    display: block;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 150px;
+    height: 150px;
+    margin: 1rem auto 1.5rem auto;
+    filter: drop-shadow(1px 1px 12px orange);
+  }
+
+  .image img {
+    position: static;
+    width: 100%;
+    height: 100%;
+    left: auto;
+    transform: none;
+  }
+}
+
+/* ===================================================================
+ * Image too big between 501px–1024px
+ * =================================================================== */
+
+/* Tablet range: 601px – 800px */
+@media screen and (min-width: 601px) and (max-width: 800px) {
+  .image {
+    display: block;
+    width: 30%; /* was 38%, shrink more so text isn't cropped */
+    right: 10px;
+    bottom: 8%;
+  }
+}
+
+/* Mid range: 801px – 1024px */
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+  .image {
+    display: block;
+    width: 32%; /* pull it in so it doesn't push past the right edge */
+    right: 15px;
+    bottom: 10%;
+  }
+
+  .image img {
+    height: 120%; /* reduce from 140% so it doesn't overflow vertically */
+  }
+}
+
+/* ===================================================================
+ * Skills Carousel - restore 4-column grid layout
+ * Scope all fixes to #skills-carousel to avoid affecting other sections
+ * =================================================================== */
+
+/* Base: ensure rows use flex properly */
+#skills-carousel .skills-row {
+  display: flex;
+  flex-wrap: nowrap; /* keep 4 items in one row */
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Each skill item: fixed width so 4 fit per row */
+#skills-carousel .clients-list__item {
+  flex: 0 0 calc(25% - 1rem); /* 4 columns */
+  width: calc(25% - 1rem);
+  max-width: 120px;
+  border-style: none !important; /* remove conflicting border nth-child rules */
+  padding: 0;
+}
+
+/* Override the 18vw padding that collapses layout on small screens */
+#skills-carousel .clients-list__item a {
+  padding: 0.5rem !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#skills-carousel .clients-list__item img {
+  width: 72px; /* desktop size */
+  height: 72px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+  #skills-carousel .clients-list__item img {
+    width: 56px; /* tablet size */
+    height: 56px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #skills-carousel .clients-list__item img {
+    width: 44px; /* mobile size */
+    height: 44px;
+  }
+}
+
+#skills-carousel .clients-list__item .desc {
+  font-size: 1rem;
+  margin: 0.3rem 0 0 0;
+  color: white;
+  word-break: break-word;
+  text-align: center;
+}
+
+/* Tablet: 3 columns */
+@media screen and (max-width: 800px) {
+  #skills-carousel .clients-list__item {
+    flex: 0 0 calc(33.33% - 1rem);
+    width: calc(33.33% - 1rem);
+    max-width: none;
+  }
+}
+
+/* Mobile: 2 columns */
+@media screen and (max-width: 500px) {
+  #skills-carousel .clients-list__item {
+    flex: 0 0 calc(50% - 0.6rem);
+    width: calc(50% - 0.6rem);
+  }
+
+  #skills-carousel .skills-row {
+    flex-wrap: wrap; /* allow wrapping when 2 items per row */
+    gap: 0.6rem;
+  }
+}

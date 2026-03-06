@@ -28,25 +28,47 @@ const skills = [
 ];
 
 let currentPage = 0;
-const skillsPerPage = 8;
-let totalPages = Math.ceil(skills.length / skillsPerPage);
 let startX = null;
+
+// -------------------------------------------------------
+// Responsive layout config
+// Returns { cols, rows } based on current viewport width
+// -------------------------------------------------------
+function getLayoutConfig() {
+  const w = window.innerWidth;
+  if (w <= 480) {
+    return { cols: 2, rows: 2 }; // 4 per page on mobile
+  } else if (w <= 800) {
+    return { cols: 3, rows: 2 }; // 6 per page on tablet
+  } else {
+    return { cols: 3, rows: 3 }; // 8 per page on desktop (original)
+  }
+}
 
 function renderSkills(page = 0) {
   const container = document.getElementById("skills-carousel");
   if (!container) return;
   container.innerHTML = "";
 
+  const { cols, rows } = getLayoutConfig();
+  const skillsPerPage = cols * rows;
+  const totalPages = Math.ceil(skills.length / skillsPerPage);
+
+  // Clamp page in case viewport was resized (page may now be out of range)
+  if (page >= totalPages) page = totalPages - 1;
+  currentPage = page;
+
   const start = page * skillsPerPage;
   const end = Math.min(start + skillsPerPage, skills.length);
   const pageSkills = skills.slice(start, end);
 
-  // Create 2 rows, 4 columns each
-  for (let row = 0; row < 2; row++) {
+  // Create rows dynamically based on layout config
+  for (let row = 0; row < rows; row++) {
     const rowDiv = document.createElement("div");
     rowDiv.className = "skills-row";
-    for (let col = 0; col < 4; col++) {
-      const skillIndex = row * 4 + col;
+
+    for (let col = 0; col < cols; col++) {
+      const skillIndex = row * cols + col;
       if (pageSkills[skillIndex]) {
         const skill = pageSkills[skillIndex];
         const card = document.createElement("div");
@@ -63,24 +85,22 @@ function renderSkills(page = 0) {
     container.appendChild(rowDiv);
   }
 
-  // Navigation with arrows and dots
+  // Navigation: arrows + dots
   const nav = document.createElement("div");
   nav.className = "skills-carousel-nav";
   nav.innerHTML = `
-    <!-- Arrow area: Edit MDI icons here if needed in the future -->
     <button class="skills-carousel-arrow" id="skills-prev" ${
       page === 0 ? "disabled" : ""
     } title="Previous">
       <i class="mdi mdi-chevron-left"></i>
     </button>
-    <!-- Dot area: Edit dot indicator style here if needed in the future -->
     <div class="skills-carousel-dots">
       ${Array.from({ length: totalPages })
         .map(
           (_, i) =>
             `<button class="skills-carousel-dot${
               i === page ? " active" : ""
-            }" data-page="${i}"></button>`
+            }" data-page="${i}" aria-label="Page ${i + 1}"></button>`,
         )
         .join("")}
     </div>
@@ -92,6 +112,7 @@ function renderSkills(page = 0) {
   `;
   container.appendChild(nav);
 
+  // Arrow click handlers
   document.getElementById("skills-prev").onclick = () => {
     if (currentPage > 0) {
       currentPage--;
@@ -104,6 +125,7 @@ function renderSkills(page = 0) {
       renderSkills(currentPage);
     }
   };
+
   // Dot navigation
   container.querySelectorAll(".skills-carousel-dot").forEach((dot) => {
     dot.onclick = (e) => {
@@ -113,7 +135,7 @@ function renderSkills(page = 0) {
     };
   });
 
-  // Touch/swipe support
+  // Touch / swipe support
   container.ontouchstart = function (e) {
     if (e.touches.length === 1) {
       startX = e.touches[0].clientX;
@@ -137,4 +159,13 @@ function renderSkills(page = 0) {
   };
 }
 
-document.addEventListener("DOMContentLoaded", () => renderSkills());
+// Re-render on window resize so column count updates
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    renderSkills(currentPage);
+  }, 200); // debounce: wait until user stops resizing
+});
+
+document.addEventListener("DOMContentLoaded", () => renderSkills(0));

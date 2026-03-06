@@ -1,8 +1,3 @@
-/* ===================================================================
- * Mueller 1.0.0 - Main JS
- *
- * ------------------------------------------------------------------- */
-
 (function (html) {
   ("use strict");
 
@@ -33,10 +28,6 @@
         }
       });
     });
-
-    // window.addEventListener('beforeunload' , function() {
-    //     siteBody.classList.remove('ss-show');
-    // });
   }; // end ssPreloader
 
   /* move header
@@ -120,12 +111,6 @@
         const sectionTop = current.offsetTop - 50;
         const sectionId = current.getAttribute("id");
 
-        /* If our current scroll position enters the space where current section
-         * on screen is, add .current class to parent element(li) of the thecorresponding
-         * navigation link, else remove it. To know which link is active, we use
-         * sectionId variable we are getting while looping through sections as
-         * an selector
-         */
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
           document
             .querySelector(".s-header__nav a[href*=" + sectionId + "]")
@@ -319,7 +304,7 @@
 
         submitMailChimpForm(this);
       },
-      false
+      false,
     );
   }; // end ssMailChimpForm
 
@@ -450,7 +435,7 @@
         easing: "easeInOutCubic",
         container: window,
       },
-      easeFunctions
+      easeFunctions,
     );
 
     triggers.forEach(function (trigger) {
