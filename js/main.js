@@ -105,38 +105,46 @@
    * ------------------------------------------------------ */
   const ssScrollSpy = function () {
     const sections = document.querySelectorAll(".target-section");
+    const headerOffset = 50;
 
-    // Add an event listener listening for scroll
     window.addEventListener("scroll", navHighlight);
+    window.addEventListener("load", navHighlight);
 
     function navHighlight() {
-      // Get current scroll position
-      let scrollY = window.pageYOffset;
+      const scrollY = window.pageYOffset;
+      let currentSectionId = sections[0]
+        ? sections[0].getAttribute("id")
+        : null;
 
-      // Loop through sections to get height(including padding and border),
-      // top and ID values for each
+      // Last section whose top is at or above the scroll position wins.
+      // Avoids the final section never matching when the page cannot scroll
+      // far enough to satisfy an upper-bound check (footer vs about).
       sections.forEach(function (current) {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 50;
-        const sectionId = current.getAttribute("id");
+        const sectionTop =
+          current.getBoundingClientRect().top + scrollY - headerOffset;
 
-        /* If our current scroll position enters the space where current section
-         * on screen is, add .current class to parent element(li) of the thecorresponding
-         * navigation link, else remove it. To know which link is active, we use
-         * sectionId variable we are getting while looping through sections as
-         * an selector
-         */
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          document
-            .querySelector(".s-header__nav a[href*=" + sectionId + "]")
-            .parentNode.classList.add("current");
-        } else {
-          document
-            .querySelector(".s-header__nav a[href*=" + sectionId + "]")
-            .parentNode.classList.remove("current");
+        if (scrollY >= sectionTop) {
+          currentSectionId = current.getAttribute("id");
         }
       });
+
+      document
+        .querySelectorAll(".s-header__menu-links > li")
+        .forEach(function (li) {
+          li.classList.remove("current");
+        });
+
+      if (!currentSectionId) return;
+
+      const activeLink = document.querySelector(
+        '.s-header__nav a[href="#' + currentSectionId + '"]'
+      );
+      if (activeLink) {
+        activeLink.parentNode.classList.add("current");
+      }
     }
+
+    navHighlight();
   }; // end ssScrollSpy
 
   /* masonry
@@ -418,43 +426,36 @@
   /* smoothscroll
    * ------------------------------------------------------ */
   const ssMoveTo = function () {
-    const easeFunctions = {
-      easeInQuad: function (t, b, c, d) {
-        t /= d;
-        return c * t * t + b;
-      },
-      easeOutQuad: function (t, b, c, d) {
-        t /= d;
-        return -c * t * (t - 2) + b;
-      },
-      easeInOutQuad: function (t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return (c / 2) * t * t + b;
-        t--;
-        return (-c / 2) * (t * (t - 2) - 1) + b;
-      },
-      easeInOutCubic: function (t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return (c / 2) * t * t * t + b;
-        t -= 2;
-        return (c / 2) * (t * t * t + 2) + b;
-      },
-    };
+    const headerOffset = 50;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
-    const triggers = document.querySelectorAll(".smoothscroll");
+    document.querySelectorAll(".smoothscroll").forEach(function (trigger) {
+      trigger.addEventListener("click", function (event) {
+        const href = trigger.getAttribute("href");
+        if (!href || href.charAt(0) !== "#") return;
 
-    const moveTo = new MoveTo(
-      {
-        tolerance: 0,
-        duration: 1200,
-        easing: "easeInOutCubic",
-        container: window,
-      },
-      easeFunctions
-    );
+        event.preventDefault();
 
-    triggers.forEach(function (trigger) {
-      moveTo.registerTrigger(trigger);
+        const id = href.slice(1);
+        let top = 0;
+
+        if (id && id !== "top") {
+          const target = document.getElementById(id);
+          if (!target) return;
+
+          top =
+            target.getBoundingClientRect().top +
+            window.pageYOffset -
+            headerOffset;
+        }
+
+        window.scrollTo({
+          top: Math.max(0, top),
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+        });
+      });
     });
   }; // end ssMoveTo
 

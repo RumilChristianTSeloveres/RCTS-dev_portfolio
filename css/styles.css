@@ -106,7 +106,11 @@
      */
   --color-body: white;
   --color-border: rgba(0, 0, 0, 0.08);
-  --border-radius: 3px;
+  --border-radius: 8px;
+
+  /* semantic aliases (used by ui-enhancements.css) */
+  --accent: var(--color-1);
+  --accent-teal: var(--color-2);
 }
 
 /* ------------------------------------------------------------------- 
@@ -142,7 +146,13 @@
   --vspace-4: calc(4 * var(--space));
   --vspace-4_5: calc(4.5 * var(--space));
   --vspace-5: calc(5 * var(--space));
-
+  --vspace-6: calc(6 * var(--space));
+  --vspace-7: calc(7 * var(--space));
+  --vspace-8: calc(8 * var(--space));
+  --vspace-9: calc(9 * var(--space));
+  --vspace-10: calc(10 * var(--space));
+  --vspace-11: calc(11 * var(--space));
+  --vspace-12: calc(12 * var(--space));
   /* type scale
      * ratio 1:2 | base: 18px
      * -------------------------------------------------------
@@ -3416,10 +3426,10 @@ img.u-pull-left {
 .s-intro__content-title {
   --text-title-size: 8.8rem;
   --text-multiplier: 1;
-  font-weight: 350;
+  font-weight: 600;
   line-height: 1.227;
   color: white;
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--font-2);
   padding-top: var(--vspace-0_75);
   padding-right: 10vw;
   margin-top: 0;
@@ -3429,9 +3439,11 @@ img.u-pull-left {
 .s-intro__content-title::before {
   display: block;
   content: "";
-  height: 2px;
+  height: 3px;
   width: 35rem;
-  background-color: orangered;
+  max-width: min(35rem, 90%);
+  background: linear-gradient(90deg, var(--color-1), var(--color-2));
+  border-radius: 9999px;
   position: absolute;
   top: 0;
   bottom: 10;
@@ -3454,7 +3466,7 @@ img.u-pull-left {
 }
 
 .s-intro__content-btn:hover {
-  color: yellow;
+  color: #fff;
 }
 
 .s-intro__content-video-btn {
@@ -4318,8 +4330,10 @@ img.u-pull-left {
 .s-footer {
   background-color: var(--color-gray-12);
   /*var(--color-gray-2);*/
-  padding-top: calc(5.5 * var(--space));
-  padding-bottom: var(--vspace-3);
+  /* padding-top: calc(5.5 * var(--space));
+  padding-bottom: var(--vspace-3); */
+  padding-top: var(--vspace-12);
+  padding-bottom: var(--vspace-7);
   margin-top: auto;
   position: relative;
 }
