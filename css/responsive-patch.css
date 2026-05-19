@@ -19,14 +19,8 @@
   }
 }
 
-/* Mobile: hide the floating profile image so hero text is readable.
-   The about section already has a proper profile image. */
-@media screen and (max-width: 600px) {
-  .image {
-    display: none;
-  }
-
-  /* Give intro content more breathing room on mobile */
+/* Mobile / tablet portrait: extra intro padding (hero image stacks via 767px rule) */
+@media screen and (max-width: 767px) {
   .s-intro__content {
     padding-top: 7rem;
     padding-left: 1.5rem;
@@ -147,7 +141,7 @@
 @media screen and (max-width: 400px) {
   .s-about img {
     max-width: 100%;
-    box-shadow: 1px 1px 20px orange; /* smaller shadow on mobile */
+    box-shadow: 0 8px 28px rgba(242, 101, 34, 0.35);
   }
 }
 
@@ -156,14 +150,14 @@
  * =================================================================== */
 @media screen and (max-width: 500px) {
   .icons i {
-    font-size: 24px;
+    font-size: 1.65rem;
     margin-left: 4%;
   }
 }
 
 @media screen and (max-width: 380px) {
   .icons i {
-    font-size: 20px;
+    font-size: 1.5rem;
     margin-left: 3%;
   }
 }
@@ -217,16 +211,15 @@
 
   /* Active dot — same size, just different color */
   .skills-carousel-dot.active {
-    background: orangered;
+    background: var(--color-1);
     width: 10px;
     height: 10px;
     border-radius: 50%;
   }
 }
 
-/* Mobile: stack image above text in intro */
-@media screen and (max-width: 500px) {
-  /* Switch inner content to column layout */
+/* Mobile + tablet portrait: stack profile image above hero text */
+@media screen and (max-width: 767px) {
   .s-intro__content-inner {
     display: flex;
     flex-direction: column;
@@ -234,43 +227,42 @@
     text-align: center;
   }
 
-  /* Un-absolute the image so it flows normally */
   .image {
-    display: block; /* override the earlier display:none from responsive-patch */
-    position: relative; /* pull it out of absolute positioning */
-    width: 160px;
-    height: 160px;
+    display: block;
+    position: relative;
+    width: clamp(140px, 40vw, 180px);
+    height: clamp(140px, 40vw, 180px);
     right: auto;
     bottom: auto;
-    margin: 0 auto 2rem auto;
-    filter: drop-shadow(1px 1px 12px orange);
+    margin: 0 auto 2rem;
+    filter: drop-shadow(0 12px 32px rgba(242, 101, 34, 0.35));
   }
 
   .image img {
-    position: static; /* override position: inherit */
+    position: static;
     width: 100%;
     height: 100%;
     left: auto;
     transform: none;
   }
 
-  /* Re-center title text and remove the decorative line's left offset */
   .s-intro__content-title {
     padding-right: 0;
     padding-top: 0;
   }
 
   .s-intro__content-title::before {
-    display: none; /* hide the decorative orange line on mobile */
+    display: none;
   }
 
-  /* Center the buttons and icons */
   .s-intro__content-buttons {
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
 
   .icons {
-    text-align: center;
+    justify-content: center;
   }
 }
 
@@ -295,30 +287,8 @@
   align-items: center;
 }
 
-@media screen and (max-width: 500px) {
-  /* image is handled by the column layout fix below — keep it visible */
-  .image {
-    display: block;
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 150px;
-    height: 150px;
-    margin: 1rem auto 1.5rem auto;
-    filter: drop-shadow(1px 1px 12px orange);
-  }
-
-  .image img {
-    position: static;
-    width: 100%;
-    height: 100%;
-    left: auto;
-    transform: none;
-  }
-}
-
-/* Tablet range: 601px – 800px */
-@media screen and (min-width: 601px) and (max-width: 800px) {
+/* Tablet range: 768px – 800px */
+@media screen and (min-width: 768px) and (max-width: 800px) {
   .image {
     display: block;
     width: 30%; /* was 38%, shrink more so text isn't cropped */
@@ -395,7 +365,7 @@
 #skills-carousel .clients-list__item .desc {
   font-size: 1rem;
   margin: 0.3rem 0 0 0;
-  color: white;
+  color: var(--color-text);
   word-break: break-word;
   text-align: center;
 }
