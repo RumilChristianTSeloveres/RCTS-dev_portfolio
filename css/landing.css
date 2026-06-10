@@ -560,6 +560,10 @@ body {
   .cta__group.is-open .cta__menu {
     transform: translateY(0);
   }
+
+  body.dropdown-open .landing__footer {
+    display: none;
+  }
 }
 
 @media (max-height: 700px) and (min-width: 641px) {
@@ -581,4 +585,9 @@ body {
   .hero__tagline {
     margin-bottom: 0.4rem;
   }
+}
+
+#menu-projects li:first-child a {
+  font-weight: 700;
+  color: #0dbd0d;
 }

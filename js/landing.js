@@ -6,6 +6,7 @@
 
   const groups = document.querySelectorAll("[data-dropdown]");
   const yearEl = document.getElementById("year");
+  const footer = document.querySelector(".landing__footer");
 
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
@@ -26,6 +27,10 @@
     group.classList.toggle("is-open", open);
     trigger.setAttribute("aria-expanded", open ? "true" : "false");
     menu.hidden = !open;
+  
+    if (footer) {
+      footer.style.display = open ? "none" : "";
+    }
   }
 
   groups.forEach(function (group) {
