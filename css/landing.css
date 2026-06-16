@@ -4,6 +4,7 @@
    ========================================================================== */
 
 :root {
+  color-scheme: light;
   --orange: #f26522;
   --orange-light: #ff8c4a;
   --orange-pale: #ffd4b8;
@@ -247,10 +248,12 @@ body {
 }
 
 .hero__name-accent {
-  background: linear-gradient(120deg, var(--orange) 0%, var(--orange-light) 50%, var(--teal) 100%);
+  background: linear-gradient(120deg, #d9480f 0%, var(--orange) 42%, var(--teal-light) 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  color: var(--orange);
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
 }
 
 .hero__role {
@@ -590,4 +593,27 @@ body {
 #menu-projects li:first-child a {
   font-weight: 700;
   color: #0dbd0d;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero__name-accent {
+    background: none;
+    color: #ff8c4a;
+    -webkit-text-fill-color: #ff8c4a;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+  }
+}
+
+@media (forced-colors: active) {
+  .hero__name-accent {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: CanvasText;
+  }
+
+  .cta__trigger--outline,
+  .cta__menu {
+    background: Canvas;
+    color: CanvasText;
+  }
 }
