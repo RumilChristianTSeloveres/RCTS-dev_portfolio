@@ -10,13 +10,6 @@ https://rumilchristiantseloveres.github.io/RCTS-dev_portfolio/
 
 - HTML / CSS / JavaScript
 
-## 📁 Features
-
-- About me section
-- Projects showcase
-- Skills overview
-- Contact form
-
 ## 📬 Contact
 
 - GitHub: https://github.com/RumilChristianTSeloveres
