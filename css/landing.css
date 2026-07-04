@@ -77,9 +77,21 @@ body {
   position: absolute;
   inset: -50%;
   background:
-    radial-gradient(ellipse 60% 50% at 20% 30%, var(--orange-glow), transparent 55%),
-    radial-gradient(ellipse 50% 45% at 80% 70%, var(--teal-glow), transparent 50%),
-    radial-gradient(ellipse 40% 35% at 60% 15%, rgba(255, 180, 120, 0.25), transparent 45%);
+    radial-gradient(
+      ellipse 60% 50% at 20% 30%,
+      var(--orange-glow),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 50% 45% at 80% 70%,
+      var(--teal-glow),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 40% 35% at 60% 15%,
+      rgba(255, 180, 120, 0.25),
+      transparent 45%
+    );
   animation: mesh-drift 18s ease-in-out infinite alternate;
 }
 
@@ -124,27 +136,50 @@ body {
     linear-gradient(rgba(3, 93, 92, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(3, 93, 92, 0.04) 1px, transparent 1px);
   background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, black 20%, transparent 75%);
+  mask-image: radial-gradient(
+    ellipse 80% 70% at 50% 45%,
+    black 20%,
+    transparent 75%
+  );
 }
 
 @keyframes mesh-drift {
-  from { transform: translate(0, 0) rotate(0deg); }
-  to { transform: translate(3%, -2%) rotate(2deg); }
+  from {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  to {
+    transform: translate(3%, -2%) rotate(2deg);
+  }
 }
 
 @keyframes float-a {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-24px, 20px) scale(1.06); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-24px, 20px) scale(1.06);
+  }
 }
 
 @keyframes float-b {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(18px, -16px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(18px, -16px);
+  }
 }
 
 @keyframes float-c {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-12px, 14px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-12px, 14px);
+  }
 }
 
 /* ---- Layout ---- */
@@ -193,7 +228,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 42rem;
+  max-width: min(76rem, 100%);
   width: 100%;
   gap: 0.35rem;
 }
@@ -216,13 +251,17 @@ body {
 }
 
 @keyframes ring-spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .hero__photo {
   position: relative;
-  width: 16rem;
-  height: 16rem;
+  /* width: 16rem;
+  height: 16rem; */
+  width: clamp(10rem, 18vh, 12rem);
+  height: clamp(10rem, 18vh, 12rem);
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--surface-solid);
@@ -248,7 +287,12 @@ body {
 }
 
 .hero__name-accent {
-  background: linear-gradient(120deg, #d9480f 0%, var(--orange) 42%, var(--teal-light) 100%);
+  background: linear-gradient(
+    120deg,
+    #d9480f 0%,
+    var(--orange) 42%,
+    var(--teal-light) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: var(--orange);
@@ -277,8 +321,13 @@ body {
 }
 
 @keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 0 var(--orange-glow); }
-  50% { box-shadow: 0 0 0 6px transparent; }
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--orange-glow);
+  }
+  50% {
+    box-shadow: 0 0 0 6px transparent;
+  }
 }
 
 .hero__tagline {
@@ -424,7 +473,9 @@ body {
   color: var(--ink);
   text-decoration: none;
   border-radius: 8px;
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 }
 
 .cta__menu a:hover,
@@ -461,6 +512,296 @@ body {
 .contact__sep {
   color: var(--ink-soft);
   opacity: 0.8;
+}
+
+/* ---- In-flow project chip selector ---- */
+.social-selector {
+  order: -2;
+  flex-basis: 100%;
+}
+
+.social-selector__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-selector__list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.8rem;
+  color: var(--ink);
+  font: 600 0.8rem var(--font-display);
+  text-decoration: none;
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 3px 12px rgba(13, 148, 136, 0.08);
+  transition:
+    color 0.15s,
+    border-color 0.15s,
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+
+.social-selector__list svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+.social-selector__list li:nth-child(1) svg {
+  color: #1877f2;
+}
+.social-selector__list li:nth-child(2) svg {
+  color: #ff0000;
+}
+.social-selector__list li:nth-child(3) svg {
+  color: #0a66c2;
+}
+
+.social-selector__list a:hover,
+.social-selector__list a:focus-visible {
+  color: var(--teal);
+  border-color: var(--teal);
+  box-shadow: 0 5px 18px var(--teal-glow);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.project-selector {
+  order: 0;
+  flex-basis: 100%;
+  width: min(74rem, calc(100vw - 3rem));
+  margin: 0.25rem auto 0.2rem;
+  text-align: center;
+  animation: fade-up 0.75s var(--ease) 0.36s both;
+}
+
+.project-selector__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0.15rem 0.25rem 0.45rem;
+  list-style: none;
+}
+
+.github-selector {
+  /* Resize the complete GitHub section here. */
+  --github-card-width: 31rem;
+  --github-cell-height: 5px;
+  order: -1;
+  flex-basis: 100%;
+  width: min(var(--github-card-width), 100%);
+}
+
+.github-selector__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.github-selector__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.8rem;
+  color: var(--ink);
+  font: 600 0.8rem var(--font-display);
+  text-decoration: none;
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  transition:
+    color 0.15s,
+    border-color 0.15s,
+    transform 0.15s;
+}
+
+.github-selector__links svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.github-selector__links a:hover,
+.github-selector__links a:focus-visible {
+  color: var(--teal);
+  border-color: var(--teal);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.github-activity {
+  margin: 0.4rem auto 0;
+  padding: 0.45rem 0.55rem;
+  color: var(--ink-soft);
+  font: 600 0.75rem var(--font-display);
+  text-align: left;
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.github-activity__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.github-activity__header small {
+  display: block;
+  margin-top: 0.05rem;
+  font: 500 0.65rem var(--font);
+}
+.github-activity select {
+  padding: 0.2rem 0.4rem;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.github-calendar-wrap {
+  width: 100%;
+  margin-top: 0.3rem;
+  overflow: hidden;
+  padding-bottom: 0.1rem;
+}
+.github-calendar__months {
+  display: grid;
+  grid-template-columns: repeat(53, minmax(0, 1fr));
+  width: calc(100% - 28px);
+  height: 0.75rem;
+  margin-left: 29px;
+  font: 500 0.6rem var(--font);
+}
+.github-calendar__months span {
+  white-space: nowrap;
+}
+.github-calendar__body {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+.github-calendar__days {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  align-self: stretch;
+  row-gap: 1px;
+  width: 24px;
+  flex: 0 0 24px;
+  font: 500 0.55rem var(--font);
+  line-height: 1;
+}
+.github-calendar__days span:nth-child(1) {
+  grid-row: 2;
+}
+.github-calendar__days span:nth-child(2) {
+  grid-row: 4;
+}
+.github-calendar__days span:nth-child(3) {
+  grid-row: 6;
+}
+.github-calendar {
+  display: grid;
+  grid-template-columns: repeat(53, minmax(0, 1fr));
+  grid-template-rows: repeat(7, var(--github-cell-height));
+  grid-auto-flow: column;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+  width: auto;
+}
+.github-calendar__day {
+  width: 100%;
+  height: var(--github-cell-height);
+  background: #ebedf0;
+  border-radius: 2px;
+}
+.github-calendar__day[data-level="1"] {
+  background: #9be9a8;
+}
+.github-calendar__day[data-level="2"] {
+  background: #40c463;
+}
+.github-calendar__day[data-level="3"] {
+  background: #30a14e;
+}
+.github-calendar__day[data-level="4"] {
+  background: #216e39;
+}
+.github-calendar__day--empty {
+  visibility: hidden;
+}
+.github-activity > a {
+  display: inline-block;
+  margin-top: 0.15rem;
+  color: var(--teal);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.project-selector__list a {
+  display: block;
+  padding: 0.45rem 0.7rem;
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25;
+  text-decoration: none;
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  transition:
+    color 0.15s,
+    background 0.15s,
+    border-color 0.15s,
+    transform 0.15s;
+}
+
+.project-selector__list a:hover,
+.project-selector__list a:focus-visible {
+  color: #fff;
+  background: var(--orange);
+  border-color: var(--orange);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+#menu-projects li:first-child a {
+  color: #fff;
+  background: linear-gradient(135deg, var(--teal), var(--teal-light));
+  border: 2px solid #fff;
+  font-weight: 700;
+  box-shadow:
+    0 5px 18px var(--teal-glow),
+    0 0 0 2px var(--teal);
+  transform: translateY(-1px);
+}
+
+#menu-projects li:first-child a::before {
+  content: "★ Featured";
+  margin-right: 0.35rem;
+  color: #fff4a8;
+  font-size: 0.68rem;
 }
 
 /* ---- Entrance animations ---- */
@@ -588,11 +929,6 @@ body {
   .hero__tagline {
     margin-bottom: 0.4rem;
   }
-}
-
-#menu-projects li:first-child a {
-  font-weight: 700;
-  color: #0dbd0d;
 }
 
 @media (prefers-color-scheme: dark) {

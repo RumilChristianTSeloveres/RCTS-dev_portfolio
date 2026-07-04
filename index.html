@@ -71,191 +71,296 @@
           Full Stack Software Engineer
         </p>
         <p class="hero__tagline">
-          Building polished, accessible web experiences from intuitive UI design to
-          production-ready code.
+          Building polished, accessible web experiences from intuitive UI design
+          to production-ready code.
         </p>
 
         <div class="contact">
-          <a class="contact__link" href="mailto:rumil.christian@gmail.com">rumil.christian@gmail.com</a>
+          <a class="contact__link" href="mailto:rumil.christian@gmail.com"
+            >rumil.christian@gmail.com</a
+          >
           <span class="contact__sep" aria-hidden="true">·</span>
           <a class="contact__link" href="tel:+639661552780">+63 966 155 2780</a>
         </div>
 
-        <nav class="cta" aria-label="Portfolio actions">
-          <!-- Social Media -->
-          <div class="cta__group" data-dropdown>
-            <button
-              type="button"
-              class="cta__trigger"
-              id="cta-social"
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-controls="menu-social"
-            >
-              <span class="cta__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                </svg>
-              </span>
-              Social Media
-              <span class="cta__chevron" aria-hidden="true"></span>
-            </button>
-            <ul
-              class="cta__menu"
-              id="menu-social"
-              role="menu"
-              aria-labelledby="cta-social"
-              hidden
-            >
-              <li role="none">
+        <nav class="cta" aria-label="Social and code links">
+          <!-- Social links -->
+          <div class="social-selector" aria-label="Social profiles">
+            <ul class="social-selector__list">
+              <li>
                 <a
-                  role="menuitem"
                   href="https://www.facebook.com/share/1HFTuuB8m3/"
                   target="_blank"
                   rel="noopener noreferrer"
-                >Facebook</a>
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M14 8h3V4h-3c-3.3 0-6 2.7-6 6v2H5v4h3v8h4v-8h4l1-4h-5v-2c0-1.1.9-2 2-2z"
+                    />
+                  </svg>
+                  Facebook
+                </a>
               </li>
-              <li role="none">
+              <li>
                 <a
-                  role="menuitem"
                   href="https://www.youtube.com/channel/UCLsYOOdSZ-nUECA9bxY30gw/"
                   target="_blank"
                   rel="noopener noreferrer"
-                >YouTube</a>
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"
+                    />
+                  </svg>
+                  YouTube
+                </a>
               </li>
-              <li role="none">
+              <li>
                 <a
-                  role="menuitem"
                   href="https://www.linkedin.com/in/rumil-christian-t-seloveres-9380662b9/"
                   target="_blank"
                   rel="noopener noreferrer"
-                >LinkedIn</a>
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM2.8 10h4.4v12H2.8V10zm7.1 0h4.2v1.6h.1c.6-1.1 2-2.2 4.1-2.2 4.4 0 5.2 2.9 5.2 6.7V22h-4.4v-5.2c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9V22H9.9V10z"
+                    />
+                  </svg>
+                  LinkedIn
+                </a>
               </li>
             </ul>
           </div>
 
           <!-- GitHub -->
-          <div class="cta__group" data-dropdown>
-            <button
-              type="button"
-              class="cta__trigger cta__trigger--teal"
-              id="cta-github"
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-controls="menu-github"
-            >
-              <span class="cta__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A8.203 8.203 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          <section
+            class="github-selector"
+            aria-labelledby="github-activity-title"
+          >
+            <div class="github-selector__links">
+              <a
+                href="https://github.com/RumilChristianTSeloveres/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A8.203 8.203 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+                  />
                 </svg>
-              </span>
-              GitHub
-              <span class="cta__chevron" aria-hidden="true"></span>
-            </button>
-            <ul
-              class="cta__menu"
-              id="menu-github"
-              role="menu"
-              aria-labelledby="cta-github"
-              hidden
-            >
-              <li role="none">
-                <a
-                  role="menuitem"
-                  href="https://github.com/RumilChristianTSeloveres/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >My Profile</a>
-              </li>
-              <li role="none">
-                <a
-                  role="menuitem"
-                  href="https://github.com/RumilChristianTSeloveres?tab=repositories"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >All Repositories</a>
-              </li>
-            </ul>
-          </div>
+                GitHub Profile
+              </a>
+              <a
+                href="https://github.com/RumilChristianTSeloveres?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path d="M3 3h7l2 2h9v15H3z" />
+                  <path d="M8 10h8M8 14h8" />
+                </svg>
+                GitHub Repositories
+              </a>
+            </div>
 
-          <!-- Projects -->
-          <div class="cta__group" data-dropdown>
-            <button
-              type="button"
-              class="cta__trigger cta__trigger--outline"
-              id="cta-projects"
-              aria-expanded="false"
-              aria-haspopup="true"
-              aria-controls="menu-projects"
-            >
-              <span class="cta__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-                </svg>
-              </span>
-              Projects
-              <span class="cta__chevron" aria-hidden="true"></span>
-            </button>
+            <!-- COMMENTED FOR NOW AS IT WILL BE ADDED IN FUTURE -->
+            <!-- <div class="github-activity">
+              <div class="github-activity__header">
+                <div>
+                  <span id="github-activity-title">GitHub contribution activity</span>
+                  <small id="github-contribution-total" aria-live="polite">Loading contributions…</small>
+                </div>
+                <label>
+                  <span class="sr-only">Contribution year</span>
+                  <select id="github-year" aria-label="Contribution year"></select>
+                </label>
+              </div>
+              <div class="github-calendar-wrap">
+                <div id="github-months" class="github-calendar__months" aria-hidden="true"></div>
+                <div class="github-calendar__body">
+                  <div class="github-calendar__days" aria-hidden="true"><span>Mon</span><span>Wed</span><span>Fri</span></div>
+                  <div id="github-calendar" class="github-calendar" role="img" aria-label="GitHub contribution calendar"></div>
+                </div>
+              </div>
+              <a id="github-activity-link" href="https://github.com/RumilChristianTSeloveres" target="_blank" rel="noopener noreferrer">Verify on GitHub</a>
+            </div> -->
+          </section>
+
+          <!-- Project selector -->
+          <div class="project-selector">
             <ul
-              class="cta__menu cta__menu--scroll"
+              class="project-selector__list"
               id="menu-projects"
-              role="menu"
-              aria-labelledby="cta-projects"
-              hidden
+              aria-label="Projects"
             >
               <li role="none">
-                <a role="menuitem" href="https://store-inventory-management-system-saas.vercel.app/" target="_blank" rel="noopener noreferrer">Store Inventory Management System - SaaS : Personal Project</a>
+                <a
+                  role="menuitem"
+                  href="https://store-inventory-management-system-saas.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Store Inventory Management System - SaaS : Personal
+                  Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/16nLLYfX9iNc5cJZcpiDPuTRsrtDhkfD3?usp=sharing" target="_blank" rel="noopener noreferrer">CRADLETALK Thesis (ML Device) : College Thesis</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/16nLLYfX9iNc5cJZcpiDPuTRsrtDhkfD3?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >CRADLETALK Thesis (ML Device) : College Thesis</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/1XOrR2hxIHxkCrLlhhnDbLzwUOeT-WoHO?usp=sharing" target="_blank" rel="noopener noreferrer">Adobe Illustrator Branding : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/1XOrR2hxIHxkCrLlhhnDbLzwUOeT-WoHO?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Adobe Illustrator Branding : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/17JhHgLL4ncEtMTjXAOkSHaUU_X3t07aZ?usp=sharing" target="_blank" rel="noopener noreferrer">Figma Wireframes &amp; Flowcharts : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/17JhHgLL4ncEtMTjXAOkSHaUU_X3t07aZ?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Figma Wireframes &amp; Flowcharts : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/17JhHgLL4ncEtMTjXAOkSHaUU_X3t07aZ?usp=sharing" target="_blank" rel="noopener noreferrer">Earthquake Warning System : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/17JhHgLL4ncEtMTjXAOkSHaUU_X3t07aZ?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Earthquake Warning System : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/1UdkOUy8aJQCF0B62-6I2YMhkJL4nS3nn?usp=sharing" target="_blank" rel="noopener noreferrer">Smart Plant Monitoring : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/1UdkOUy8aJQCF0B62-6I2YMhkJL4nS3nn?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Smart Plant Monitoring : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/1XAtH-2clUUwDbHEQOvi5SauFJpTIDW51?usp=sharing" target="_blank" rel="noopener noreferrer">Cisco Packet Tracer : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/1XAtH-2clUUwDbHEQOvi5SauFJpTIDW51?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Cisco Packet Tracer : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/1vnmxBd7TReNbhrsem2zX2-n9-Z6uFVF9?usp=sharing" target="_blank" rel="noopener noreferrer">IoT Sumobot : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/1vnmxBd7TReNbhrsem2zX2-n9-Z6uFVF9?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >IoT Sumobot : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/1p-lxtVx50mVRBy0nXIyGz5PLV2bNJy_i?usp=sharing" target="_blank" rel="noopener noreferrer">MySQL / XAMPP : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/1p-lxtVx50mVRBy0nXIyGz5PLV2bNJy_i?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >MySQL / XAMPP : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/1CKG4-cYX1mxVaGvELdDH-FPi9xdzj6fU?usp=drive_link" target="_blank" rel="noopener noreferrer">Paper Plate Vending Machine : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/1CKG4-cYX1mxVaGvELdDH-FPi9xdzj6fU?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Paper Plate Vending Machine : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/1QeaTxIJbLXTgC6qkcgYHDIVKB7PzdDhi?usp=drive_link" target="_blank" rel="noopener noreferrer">Parking Lot Monitoring : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/1QeaTxIJbLXTgC6qkcgYHDIVKB7PzdDhi?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Parking Lot Monitoring : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/1MsNNG1mRQpDHkMNxk-jraYmiBT3e52fY?usp=drive_link" target="_blank" rel="noopener noreferrer">Image Editor (Machine Vision) : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/1MsNNG1mRQpDHkMNxk-jraYmiBT3e52fY?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Image Editor (Machine Vision) : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/1X_YnvYt--mtOh2fCIn9tZZOM_OQXy-wC?usp=drive_link" target="_blank" rel="noopener noreferrer">OS Scheduling Algorithms : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/1X_YnvYt--mtOh2fCIn9tZZOM_OQXy-wC?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >OS Scheduling Algorithms : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/1flWTqkx8jmaTZ8wPAItDdOWYy2mW9hH8?usp=drive_link" target="_blank" rel="noopener noreferrer">AutoCAD 2D &amp; 3D Designs : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/1flWTqkx8jmaTZ8wPAItDdOWYy2mW9hH8?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AutoCAD 2D &amp; 3D Designs : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/1-2WlKR59cthTnRgCiUyb6kGRuP1P_Yj9?usp=drive_link" target="_blank" rel="noopener noreferrer">JavaFX SceneBuilder App : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/1-2WlKR59cthTnRgCiUyb6kGRuP1P_Yj9?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >JavaFX SceneBuilder App : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/13Lk1-vQkXh3Mv41M0_moyRAIr_N4CH3F?usp=drive_link" target="_blank" rel="noopener noreferrer">HTML &amp; CSS Designs : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/13Lk1-vQkXh3Mv41M0_moyRAIr_N4CH3F?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >HTML &amp; CSS Designs : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/1CCPuoLJrRey42EWk5WcgnIO9V0ewTVFk?usp=drive_link" target="_blank" rel="noopener noreferrer">Proteus 8 Simulations : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/1CCPuoLJrRey42EWk5WcgnIO9V0ewTVFk?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Proteus 8 Simulations : College Project</a
+                >
               </li>
               <li role="none">
-                <a role="menuitem" href="https://drive.google.com/drive/folders/1rtZuxGP9ywczMYfFPUFkeCxEobFBULgZ?usp=drive_link" target="_blank" rel="noopener noreferrer">Hardware Projects : College Project</a>
+                <a
+                  role="menuitem"
+                  href="https://drive.google.com/drive/folders/1rtZuxGP9ywczMYfFPUFkeCxEobFBULgZ?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Hardware Projects : College Project</a
+                >
               </li>
             </ul>
           </div>
