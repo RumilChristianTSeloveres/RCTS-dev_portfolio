@@ -1,6 +1,6 @@
 # My Portfolio
 
-A personal portfolio website showcasing my projects, skills, and experience as a Computer Engineering Student.
+A personal portfolio website showcasing my projects, skills, and experience as a Professional Software Engineer together with my College days projects.
 
 ## 🔗 Live Site
 
