@@ -27,6 +27,17 @@
     <link rel="icon" type="image/jpeg" sizes="32x32" href="RC-logo.png" />
     <link rel="icon" type="image/jpeg" sizes="16x16" href="RC-logo.png" />
     <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Facebook URL Cleaner Script -->
+    <script>
+        // Check if Facebook tracking parameters are in the URL
+        if (window.location.search.indexOf('fbclid') !== -1) {
+        // Build a clean URL without the query string
+        var cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        // Replace the messy URL in the browser bar without reloading the page
+        window.history.replaceState({}, document.title, cleanUrl);
+  }
+    </script>
   </head>
 
   <body>
