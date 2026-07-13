@@ -6,9 +6,9 @@
     <meta name="color-scheme" content="light" />
     <meta
       name="description"
-      content="Rumil Christian Seloveres — Full Stack Software Engineer specializing in modern web, desktop, and SaaS application development."
+      content="Rumil Christian Seloveres — Full-Stack Software Engineer specializing in modern web, desktop, and SaaS application development."
     />
-    <title>Rumil Christian Seloveres | Full Stack Software Engineer</title>
+    <title>Rumil Christian Seloveres | Full-Stack Software Engineer</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,13 +24,17 @@
 
     <!-- Facebook URL Cleaner Script -->
     <script>
-        // Check if Facebook tracking parameters are in the URL
-        if (window.location.search.indexOf('fbclid') !== -1) {
+      // Check if Facebook tracking parameters are in the URL
+      if (window.location.search.indexOf("fbclid") !== -1) {
         // Build a clean URL without the query string
-        var cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        var cleanUrl =
+          window.location.protocol +
+          "//" +
+          window.location.host +
+          window.location.pathname;
         // Replace the messy URL in the browser bar without reloading the page
         window.history.replaceState({}, document.title, cleanUrl);
-  }
+      }
     </script>
   </head>
 
@@ -85,11 +89,11 @@
         </h1>
         <p class="hero__role">
           <span class="hero__role-dot" aria-hidden="true"></span>
-          Full Stack Software Engineer
+          Full-Stack Software Engineer
         </p>
         <p class="hero__tagline">
-          Building reliable, accessible web and desktop applications—from
-          intuitive interfaces to production-ready software.
+          Building reliable, accessible web and desktop applications with
+          Vue.js, .NET, PostgreSQL, SQL Server, and AWS.
         </p>
 
         <div class="contact">
@@ -339,12 +343,13 @@
                 </div>
                 <ul class="tech-stack__list">
                   <li>Next.js</li>
-                  <li>React</li>
+                  <li>React.js</li>
                   <li>Nuxt.js</li>
                   <li>Vue.js</li>
                   <li>Vuetify</li>
                   <li>TypeScript</li>
                   <li>JavaScript</li>
+                  <li>Laravel</li>
                   <li>HTML5</li>
                   <li>CSS3</li>
                   <li>Responsive UI</li>
@@ -411,6 +416,24 @@
                 </ul>
               </article>
 
+              <!-- CLOUD -->
+              <article class="tech-stack__group">
+                <div class="tech-stack__group-heading">
+                  <span class="tech-stack__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M8 3h8v4H8zM5 7h14v13H5zM9 11h6M9 15h4" />
+                    </svg>
+                  </span>
+                  <h3>Cloud</h3>
+                </div>
+                <ul class="tech-stack__list">
+                  <li>AWS Lambda</li>
+                  <li>Cloudfront</li>
+                  <li>Cloudwatch</li>
+                  <li>VPC</li>
+                </ul>
+              </article>
+
               <!-- TOOLS AND WORKFLOW -->
               <article class="tech-stack__group">
                 <div class="tech-stack__group-heading">
@@ -469,16 +492,27 @@
                       Application preview
                     </span>
                   </span>
-                  <span class="professional-project__body">
+                  <div class="professional-project__body">
                     <span class="professional-project__type">
                       Mobile, Web &amp; Back-Office SaaS Platform
                     </span>
                     <strong>HanapKita SaaS Platform</strong>
-                    <span>
-                      I contribute to the ongoing development, enhancement, and
-                      maintenance of this SaaS platform.
-                    </span>
-                  </span>
+                    <div class="professional-project__details">
+                      <p>
+                        Designed and implemented production-ready features,
+                        developed backend APIs and database modules, and
+                        improved application maintainability and performance.
+                      </p>
+                      <p class="professional-project__technologies">
+                        Technologies
+                      </p>
+                      <ul class="professional-project__stack">
+                        <li>Next.js</li>
+                        <li>PostgreSQL</li>
+                        <li>AWS</li>
+                      </ul>
+                    </div>
+                  </div>
                 </a>
 
                 <!-- COMPANY PROJECT 2: Replace the href below with the public landing-page URL. -->
@@ -499,16 +533,29 @@
                       Application preview
                     </span>
                   </span>
-                  <span class="professional-project__body">
+                  <div class="professional-project__body">
                     <span class="professional-project__type">
                       Web Application Modernization
                     </span>
                     <strong>CC Design Web Application</strong>
-                    <span>
-                      I contribute to the development, modernization, and
-                      maintenance of this web application.
-                    </span>
-                  </span>
+                    <div class="professional-project__details">
+                      <p>
+                        Developed and maintained web application features using
+                        the Nuxt.js framework with Vue.js and JavaScript, with
+                        limited TypeScript used for middleware.
+                      </p>
+                      <p class="professional-project__technologies">
+                        Technologies
+                      </p>
+                      <ul class="professional-project__stack">
+                        <li>Nuxt.js</li>
+                        <li>Vue.js</li>
+                        <li>Vuetify</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript (middleware)</li>
+                      </ul>
+                    </div>
+                  </div>
                 </a>
 
                 <!-- COMPANY PROJECT 3: Replace the href below with the public landing-page URL. -->
@@ -529,16 +576,26 @@
                       Application preview
                     </span>
                   </span>
-                  <span class="professional-project__body">
+                  <div class="professional-project__body">
                     <span class="professional-project__type">
-                      Desktop System Maintenance &amp; Modernization
+                      Legacy Desktop System Maintenance
                     </span>
                     <strong>FF Legacy Desktop Application</strong>
-                    <span>
-                      I contribute to maintaining and improving this legacy
-                      desktop application during its transition to CC Design.
-                    </span>
-                  </span>
+                    <div class="professional-project__details">
+                      <p>
+                        Maintained an existing legacy desktop application, with
+                        work focused on stability, issue resolution, and
+                        essential updates.
+                      </p>
+                      <p class="professional-project__technologies">
+                        Technologies
+                      </p>
+                      <ul class="professional-project__stack">
+                        <li>VB.NET</li>
+                        <li>Visual Studio 2005</li>
+                      </ul>
+                    </div>
+                  </div>
                 </a>
               </div>
             </section>
@@ -580,7 +637,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  CRADLETALK ML Device — College Thesis
+                  CRADLETALK Machine Learning Device — College Thesis
                 </a>
               </li>
               <li role="none">
@@ -590,47 +647,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Adobe Illustrator Branding — College Project
-                </a>
-              </li>
-              <li role="none">
-                <a
-                  role="menuitem"
-                  href="https://drive.google.com/drive/folders/17JhHgLL4ncEtMTjXAOkSHaUU_X3t07aZ?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Figma Wireframes &amp; Flowcharts — College Project
-                </a>
-              </li>
-              <li role="none">
-                <a
-                  role="menuitem"
-                  href="https://drive.google.com/drive/folders/17JhHgLL4ncEtMTjXAOkSHaUU_X3t07aZ?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Earthquake Warning System — College Project
-                </a>
-              </li>
-              <li role="none">
-                <a
-                  role="menuitem"
-                  href="https://drive.google.com/drive/folders/1UdkOUy8aJQCF0B62-6I2YMhkJL4nS3nn?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Smart Plant Monitoring — College Project
-                </a>
-              </li>
-              <li role="none">
-                <a
-                  role="menuitem"
-                  href="https://drive.google.com/drive/folders/1XAtH-2clUUwDbHEQOvi5SauFJpTIDW51?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Cisco Packet Tracer — College Project
+                  Adobe Illustrator Branding — OJT Project
                 </a>
               </li>
               <li role="none">
@@ -641,16 +658,6 @@
                   rel="noopener noreferrer"
                 >
                   IoT Sumobot — College Project
-                </a>
-              </li>
-              <li role="none">
-                <a
-                  role="menuitem"
-                  href="https://drive.google.com/drive/folders/1p-lxtVx50mVRBy0nXIyGz5PLV2bNJy_i?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  MySQL &amp; XAMPP — College Project
                 </a>
               </li>
               <li role="none">
@@ -686,61 +693,11 @@
               <li role="none">
                 <a
                   role="menuitem"
-                  href="https://drive.google.com/drive/folders/1X_YnvYt--mtOh2fCIn9tZZOM_OQXy-wC?usp=drive_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Operating System Scheduling Algorithms — College Project
-                </a>
-              </li>
-              <li role="none">
-                <a
-                  role="menuitem"
                   href="https://drive.google.com/drive/folders/1flWTqkx8jmaTZ8wPAItDdOWYy2mW9hH8?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   AutoCAD 2D &amp; 3D Designs — College Project
-                </a>
-              </li>
-              <li role="none">
-                <a
-                  role="menuitem"
-                  href="https://drive.google.com/drive/folders/1-2WlKR59cthTnRgCiUyb6kGRuP1P_Yj9?usp=drive_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  JavaFX Scene Builder Application — College Project
-                </a>
-              </li>
-              <li role="none">
-                <a
-                  role="menuitem"
-                  href="https://drive.google.com/drive/folders/13Lk1-vQkXh3Mv41M0_moyRAIr_N4CH3F?usp=drive_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  HTML &amp; CSS Designs — College Project
-                </a>
-              </li>
-              <li role="none">
-                <a
-                  role="menuitem"
-                  href="https://drive.google.com/drive/folders/1CCPuoLJrRey42EWk5WcgnIO9V0ewTVFk?usp=drive_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Proteus 8 Simulations — College Project
-                </a>
-              </li>
-              <li role="none">
-                <a
-                  role="menuitem"
-                  href="https://drive.google.com/drive/folders/1rtZuxGP9ywczMYfFPUFkeCxEobFBULgZ?usp=drive_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Hardware Projects — College Project
                 </a>
               </li>
             </ul>

@@ -578,10 +578,6 @@ body {
   gap: 0.7rem;
 }
 
-.tech-stack__group:last-child {
-  grid-column: 1 / -1;
-}
-
 .tech-stack__group {
   padding: 0.8rem;
   background: var(--surface-solid);
@@ -716,10 +712,6 @@ body {
 
   .tech-stack__group {
     grid-column: span 2;
-  }
-
-  .tech-stack__group:nth-last-child(-n + 2) {
-    grid-column: span 3;
   }
 
   .project-selector__list {
@@ -956,11 +948,28 @@ body {
   border-top: 1px solid rgba(3, 93, 92, 0.12);
 }
 
-.professional-project__body > span:last-child {
+.professional-project__details {
   align-self: start;
   color: var(--ink-soft);
   font-size: 0.7rem;
   line-height: 1.55;
+}
+
+.professional-project__details p {
+  margin: 0;
+}
+
+.professional-project__technologies {
+  padding-top: 0.55rem;
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.professional-project__stack {
+  display: grid;
+  gap: 0.12rem;
+  margin: 0.2rem 0 0;
+  padding-left: 1.05rem;
 }
 
 .github-selector {
