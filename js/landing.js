@@ -11,6 +11,28 @@
     yearEl.textContent = String(new Date().getFullYear());
   }
 
+  const professionalActivityDialog = document.getElementById("professional-activity-dialog");
+  const professionalActivityDialogOpen = document.querySelector("[data-professional-activity-dialog-open]");
+
+  if (professionalActivityDialog && professionalActivityDialogOpen) {
+    professionalActivityDialogOpen.addEventListener("click", function () {
+      if (typeof professionalActivityDialog.showModal === "function") {
+        professionalActivityDialog.showModal();
+        document.body.classList.add("is-dialog-open");
+      }
+    });
+
+    professionalActivityDialog.addEventListener("close", function () {
+      document.body.classList.remove("is-dialog-open");
+    });
+
+    professionalActivityDialog.addEventListener("click", function (event) {
+      if (event.target === professionalActivityDialog) {
+        professionalActivityDialog.close();
+      }
+    });
+  }
+
   function setupContributionCalendar(container) {
     const username = container.dataset.githubAccount;
     const yearSelect = container.querySelector("[data-github-year]");
