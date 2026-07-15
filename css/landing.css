@@ -1580,6 +1580,32 @@ body.is-dialog-open {
   font-size: 0.68rem;
 }
 
+/* Match the featured call-to-action while signalling that this project is in active development. */
+#menu-projects .personal-project-preview--ongoing > a {
+  color: #1f1600;
+  background: linear-gradient(135deg, #f8c65a, #f08c2e);
+  border: 2px solid #fff;
+  font-weight: 700;
+  box-shadow:
+    0 5px 18px rgba(240, 140, 46, 0.36),
+    0 0 0 2px #d66e10;
+  transform: translateY(-1px);
+}
+
+#menu-projects .personal-project-preview--ongoing > a::before {
+  content: "↻ Ongoing";
+  margin-right: 0.35rem;
+  color: #5a2b00;
+  font-size: 0.68rem;
+}
+
+#menu-projects .personal-project-preview--ongoing > a:hover,
+#menu-projects .personal-project-preview--ongoing > a:focus-visible {
+  color: #1f1600;
+  background: linear-gradient(135deg, #ffda79, #f6a63e);
+  border-color: #fff;
+}
+
 /* Live preview for the featured personal project (large screens only). */
 .personal-project-preview__panel {
   display: none;
