@@ -4,7 +4,7 @@ A personal portfolio website showcasing my projects, skills, and experience as a
 
 ## 🔗 Live Site
 
-https://rumilchristiantseloveres.github.io/RCTS-dev_portfolio/
+www.rumilchristian.com
 
 ## 🛠️ Built With
 
